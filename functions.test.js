@@ -12,6 +12,18 @@ test('Smash array ["hello", "world"] NOT into string "helloworld"', () => {
   expect(functions.smash(["hello", "world"])).not.toBe("helloworld");
 });
 
+test('repeatStr return a string "mydog" 3 times', () => {
+  expect(functions.repeatStr(3, "mydog")).toBe("mydogmydogmydog");
+});
+
+test("opposite return 5 when passed -5", () => {
+  expect(functions.opposite(-5)).toBe(5);
+});
+
+test("opposite Does NOT return 5 when passed -5", () => {
+  expect(functions.opposite(-5)).toBe(5);
+});
+
 // Documentation
 //toEqual, toBeLessThan, toBeLessThanOrEqual, toMatch, toContain
 //
