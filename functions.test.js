@@ -24,6 +24,13 @@ test("opposite Does NOT return 5 when passed -5", () => {
   expect(functions.opposite(-5)).toBe(5);
 });
 
+test("isPrime should return 'false' when passed 1", () => {
+  expect(functions.isPrime(1)).toBe(false);
+});
+
+test("isPrime should return 'true' when passed 137", () => {
+  expect(functions.isPrime(137)).toBe(true);
+});
 // Documentation
 //toEqual, toBeLessThan, toBeLessThanOrEqual, toMatch, toContain
 //

@@ -21,6 +21,23 @@ const functions = {
   // 1: -1
   opposite: number => {
     return number * -1;
+  },
+
+  // create a function to check if a number is prime
+
+  isPrime: num => {
+    // check if the number is less than one
+    if (num < 2) {
+      return false;
+    } else {
+      // check if the number is divisable by anything other than itself
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
   }
 };
 
