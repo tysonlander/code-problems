@@ -38,7 +38,23 @@ const functions = {
       }
       return true;
     }
+  },
+
+  // Given an array, find the int that appears an odd number of times.
+  findOdd: A => {
+    let count = {};
+    let oddNumber;
+    A.forEach(function (i) {
+      count[i] = (count[i] || 0) + 1;
+    });
+    for (let item in count) {
+      if (count[item] % 2 !== 0) {
+        oddNumber = item;
+      }
+    }
+    return parseInt(oddNumber);
   }
+
 };
 
 module.exports = functions;
