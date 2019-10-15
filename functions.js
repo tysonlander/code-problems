@@ -53,7 +53,20 @@ const functions = {
       }
     }
     return parseInt(oddNumber);
+  },
+
+  // given a sentence, find the longest word length
+  findLongestWordLength: (str) => {
+    let splitStr = str.split(' ')
+    let maxWord = 0;
+    splitStr.map((obj) => {
+      if (obj.length > maxWord) {
+        maxWord = obj.length;
+      }
+    })
+    return maxWord;
   }
+
 
 };
 
