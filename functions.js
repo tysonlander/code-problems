@@ -55,6 +55,21 @@ const functions = {
     return parseInt(oddNumber);
   },
 
+  // find how many unlucky Friday the 13th's there are in any given year
+  unluckyDays: (year) => {
+    //set up a count of Fridays to return out of the function
+    let count = 0;
+    //check each months 13th day
+    for (let month = 0; month < 12; month++) {
+      let d = new Date(year, month, 13);
+      //if that day is a Friday increment the count by 1
+      if (d.getDay() == 5) {
+        count++;
+      }
+    }
+    return count;
+  },
+
   // given a sentence, find the longest word length
   findLongestWordLength: (str) => {
     let splitStr = str.split(' ')
