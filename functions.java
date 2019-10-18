@@ -47,4 +47,19 @@ public class Main {
         return false;
     }
 
+    // sum the digits of an integer
+    public static int sumDigits(int number){
+        if(number >= 10){
+            int sum = 0;
+            while (number > 0) {
+                System.out.println("remainder " + number % 10);
+                sum += number %10;
+                // drop the least-significant digit
+                number /= 10;
+            }
+            return sum;
+        }
+        return -1;
+    }
+
 }
