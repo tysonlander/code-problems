@@ -3,6 +3,32 @@ public class Main {
 
   }
 
+  // find the largest prime factor
+  public static int getLargestPrime(int number){
+     if(number <= 1){
+         return -1;
+     }
+     int largestPrime = 0;
+     int prime = 0;
+
+     for(int i = 2; i <= number; i++){
+        if(number % i == 0){
+            // check if i is prime
+            for(int a = 2; a <= i; a++){
+                if(i % a == 0){
+                    prime = a;
+                    break;
+                }
+            }
+        }
+        // check if the prime factor of i is the greatest prime
+        if(prime > largestPrime){
+            largestPrime = prime;
+        }
+     }
+     return largestPrime;
+    }
+
   // find the greatest common divisor for two numbers
   public static int getGreatestCommonDivisor(int first, int second){
       if(first < 10 || second < 10){
@@ -62,4 +88,25 @@ public class Main {
         return -1;
     }
 
+    // check if a positive integer is equal to the sum of its proper positive divisors
+    public static boolean isPerfectNumber(int number){
+        if(number< 1){
+            return false;
+        }
+        // track the current factor to test and the total of integer factors
+        int totalFactors = 0;
+        int factor = 1;
+        // add up all of the factors less than the number
+        while(factor < number){
+            if(number % factor == 0){
+                totalFactors += factor;
+            }
+            factor++;
+        }
+        // compare the total factors to the number. If they equal return true. Else return false.
+        if(totalFactors == number){
+            return true;
+        }
+        return false;
+    }
 }
