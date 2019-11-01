@@ -1,4 +1,22 @@
 const functions = {
+  // Return the sum of Triangular Numbers up to and including the nth triangular number
+  // if 4 is given: 1 + 3 + 6 + 10 = 20
+  sumTriangularNumbers: (n) => {
+    //check if the parameter is valid
+    if (n < 0) {
+      return 0;
+    }
+    // keep track of the sum
+    let sum = 0;
+    // j is the current number. i + 1 is the interval
+    for (let i = 0, j = 1; i < n; i++ , j += i + 1) {
+      // add the triangle number to sum
+      sum += j;
+    }
+    return sum;
+  },
+
+
   add: (num1, num2) => num1 + num2,
 
   // Write a method smash that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
